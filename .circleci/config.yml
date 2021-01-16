@@ -92,10 +92,10 @@ workflows:
           requires: 
             - install
       - deploy-netlify: 
-          context: netlify_devops_tp_final
+          context: netlify-tp-final
           requires: 
             - prod-build 
       - docker-build-push:
-          context: Docker
+          context: Docker-tp-final
           requires: 
             - install

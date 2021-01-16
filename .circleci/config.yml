@@ -2,7 +2,7 @@ version: 2.1
 jobs: 
   install:
     docker:
-      - image: circleci/node:9.5
+      - image: circleci/node:latest
     steps: 
       - checkout
       - restore_cache: 
@@ -16,7 +16,7 @@ jobs:
             - node_modules
   test: 
     docker:
-      - image: circleci/node:9.5
+      - image: circleci/node:latest
     steps: 
       - checkout
       - restore_cache: 
@@ -27,7 +27,7 @@ jobs:
           command: yarn test
   prod-build: 
     docker:
-      - image: circleci/node:9.5
+      - image: circleci/node:latest
     steps: 
       - checkout
       - restore_cache: 
@@ -47,7 +47,7 @@ jobs:
             - dist
   deploy-netlify: 
     docker:
-      - image: circleci/node:9.5
+      - image: circleci/node:latest
     working_directory: ~/deploy-netlfify
     steps:
       - attach_workspace:
